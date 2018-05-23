@@ -1,0 +1,50 @@
+name:                transactions
+version:             0.1.0.0
+github:              "IvanMalison/transactions"
+license:             BSD3
+author:              "Ivan Malison"
+maintainer:          "IvanMalison@gmail.com"
+copyright:           "Ivan Malison"
+
+extra-source-files:
+- README.md
+- ChangeLog.md
+
+# Metadata used when publishing your package
+# synopsis:            Short description of your package
+# category:            Web
+
+# To avoid duplicated efforts in documentation and dealing with the
+# complications of embedding Haddock markup inside cabal files, it is
+# common to point users to the README.md file.
+description:         Please see the README on GitHub at <https://github.com/IvanMalison/transactions#readme>
+
+dependencies:
+- base >= 4.7 && < 5
+- bytestring
+- cassava
+- pipes
+- pipes-bytestring
+- pipes-csv
+- text
+- split
+- vector
+- containers
+- transformers
+- iso8601-time
+- time
+- tz
+
+library:
+  source-dirs: src
+
+executables:
+  transactions-exe:
+    main:                Main.hs
+    source-dirs:         app
+    ghc-options:
+    - -threaded
+    - -rtsopts
+    - -with-rtsopts=-N
+    dependencies:
+    - transactions
